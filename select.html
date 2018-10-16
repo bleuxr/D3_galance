@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn D3</title>
+    
+</head>
+<body>
+    <script src="d3/d3.js"></script>
+    <!-- 
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+     -->
+
+    <h3>Today is a beautiful day!</h3>
+    <script>
+            d3.select('h3').style('color', 'darkblue');
+            d3.select('h3').style('font-size','24px');
+    </script>
+
+    <ul></ul>
+    <script>
+        var fruits=['apple','mango','banana','orange'];
+        d3.select('ul')
+            .selectAll('li')
+            .data(fruits)
+            .enter()
+            .append('li')
+            .text(function(d){ return d; });
+    </script>
+
+
+</body>
+</html>

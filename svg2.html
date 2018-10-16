@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn D3</title>
+    
+</head>
+<body>
+    <script src="d3/d3.js"></script>
+    <!-- 
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+     -->
+
+
+    <svg width='200' height='500'></svg>
+    <script>
+        var data=[80,120,60,150,200]
+        var barHeight=20;
+        var bar=d3.select('svg')
+                .selectAll('rect')
+                .data(data)
+                .enter()
+                .append('rect')
+                .attr('width',function(d){return d;} )
+                .attr('height',barHeight-1 )
+                .attr('transform', function(d,i){
+                    return "translate(0,"+i*barHeight+")"
+                });
+    </script>
+
+</body>
+</html>
