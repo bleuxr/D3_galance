@@ -12,13 +12,28 @@
     <!-- 
         <script src="https://d3js.org/d3.v5.min.js"></script>
      -->
-
-     <div class="myclass">
+    <h3 class="myclass">h3</h3>
+    <div class="myclass">
         HELLO WORLD
-     </div>
+    </div>
 
      <script>
-         d3.select('div.myclass').append("span");
+        var body=d3.select("h3.myclass");
+        var span=body.append("span");
+        span.text("from method 2");
+
+        d3.select('div.myclass').append("span").text("from D3.js");
+     </script>
+
+     <div class="tclass">
+         HELLO THIRD
+     </div>
+     <script>
+         d3.select(".tclass").html("Hello World! <span>from method 3</span>");
+
+         d3.select(".tclass").classed("classed",true)
+        
+         d3.select(".tclass").attr('style',"color:red" );
      </script>
 
 </body>
